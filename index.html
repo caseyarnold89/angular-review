@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
-<body ng-controller="MainCtrl">
+<body>
 
 <section class="module parallax parallax-1">
     <div class="container">
@@ -13,33 +13,20 @@
     </div>
 </section>
 
-<div class="group">
-    <input type="text" required ng-model="myFilter">
-    <span class="highlight"></span>
-    <span class="bar"></span>
-    <label>Filter by name</label>
-</div>
-
-<div class="superHeroes">
-    <div class="hero" ng-repeat="hero in superHeroes | orderBy:'-awesomeness_level' | filter:{name:myFilter}">
-        <h2 class="heroName">{{ hero.name }}</h2>
-        <div class="hero-image">
-            <img width="100%" height="100%" ng-src="{{ hero.thumbnail.path }}.{{ hero.thumbnail.extension }}" alt="">
-        </div><br/>
-        <p class="description-header">Description</p>
-        <p class="hero-description">
-            {{ hero.description || "This character needs no description" }}
-        </p>
-    </div>
+<div class="ui-view">
+    
 </div>
 
 
 <!--angular-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<!--uirouter-->
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <!--app-->
 <script src="./app.js"></script>
 <!--controllers-->
 <script src="./controllers/MainCtrl.js"></script>
+<script src="./controllers/CardsCtrl.js"></script>
 <!--services-->
 <script src="./services/dataService.js"></script>
 </body>

@@ -1,0 +1,19 @@
+<div class="group">
+    <input type="text" required ng-model="myFilter">
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Filter by name</label>
+</div>
+
+<div class="superHeroes">
+    <div class="hero" ng-repeat="hero in superHeroes | filter:{name:myFilter}">
+        <h2 class="heroName">{{ hero.name }}</h2>
+        <div class="hero-image">
+            <img width="100%" height="100%" ng-src="{{ hero.thumbnail.path }}.{{ hero.thumbnail.extension }}" alt="">
+        </div><br/>
+        <p class="description-header">Description</p>
+        <p class="hero-description">
+            {{ hero.description || "This character needs no description" }}
+        </p>
+    </div>
+</div>
